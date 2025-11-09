@@ -79,7 +79,7 @@ export default function Index() {
       </header>
 
       <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-pink-500/20 animate-pulse"></div>
         <div className="container mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <Badge className="mb-4 bg-secondary/10 text-secondary border-secondary/20">С 2007 года</Badge>
@@ -91,8 +91,8 @@ export default function Index() {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
               {stats.map((stat, idx) => (
-                <div key={idx} className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border">
-                  <p className="text-2xl font-bold text-primary mb-1">{stat.value}</p>
+                <div key={idx} className="bg-gradient-to-br from-white via-primary/5 to-secondary/5 backdrop-blur-sm rounded-lg p-4 border-2 border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300 hover:scale-105 animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+                  <p className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-1">{stat.value}</p>
                   <p className="text-xs text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
@@ -616,33 +616,48 @@ export default function Index() {
 
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {houses.map((house) => (
+              {houses.slice(0, 6).map((house, idx) => (
                 <Card 
                   key={house.id} 
-                  className="hover:shadow-lg transition-all duration-300"
+                  className="hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 hover:border-primary/30 animate-fade-in"
+                  style={{ animationDelay: `${idx * 0.05}s` }}
                 >
-                  <CardHeader>
+                  <CardHeader className="pb-3">
                     <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon name="Building2" className="text-primary" size={20} />
+                      <div className="w-10 h-10 bg-gradient-to-br from-primary via-secondary to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+                        <Icon name="Building2" className="text-white" size={20} />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <CardTitle className="text-base leading-snug mb-2">{house.address}</CardTitle>
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <Icon name="User" size={12} />
-                            <span className="truncate">{house.manager}</span>
-                          </div>
-                          <div className="flex items-center gap-2 text-xs text-primary font-medium">
-                            <Icon name="Phone" size={12} />
-                            <a href={`tel:${house.phone}`} className="hover:underline">{house.phone}</a>
-                          </div>
-                        </div>
+                        <CardTitle className="text-base leading-snug">{house.address}</CardTitle>
                       </div>
                     </div>
                   </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <Icon name="User" size={14} className="mt-0.5 flex-shrink-0" />
+                        <span className="leading-tight">{house.manager}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Icon name="Phone" size={14} className="text-primary" />
+                        <a href={`tel:${house.phone}`} className="text-sm text-primary font-medium hover:underline">{house.phone}</a>
+                      </div>
+                    </div>
+                  </CardContent>
                 </Card>
               ))}
+            </div>
+            
+            <div className="text-center mt-8">
+              <Button 
+                size="lg" 
+                onClick={() => window.location.href = '/houses'}
+                className="bg-gradient-to-r from-primary via-secondary to-pink-500 hover:shadow-xl transition-all duration-300"
+              >
+                <Icon name="Building2" size={18} className="mr-2" />
+                Все дома в управлении
+                <Icon name="ArrowRight" size={18} className="ml-2" />
+              </Button>
             </div>
           </div>
         </div>
@@ -690,8 +705,8 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {filteredNews.map((item) => (
-              <Card key={item.id} className="hover:shadow-lg transition-shadow animate-fade-in">
+            {filteredNews.map((item, idx) => (
+              <Card key={item.id} className="hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 hover:border-primary/30 animate-fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
                     <Badge variant="secondary">{item.tag}</Badge>
@@ -783,7 +798,7 @@ export default function Index() {
         </div>
       </section>
 
-      <footer className="bg-gray-900 text-white py-12 px-4">
+      <footer className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 text-white py-12 px-4 shadow-2xl">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
