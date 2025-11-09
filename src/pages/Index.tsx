@@ -499,14 +499,10 @@ export default function Index() {
           </div>
 
           <Tabs defaultValue="meters" className="max-w-4xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="meters">
                 <Icon name="Gauge" size={16} className="mr-2" />
                 Показания
-              </TabsTrigger>
-              <TabsTrigger value="payment">
-                <Icon name="CreditCard" size={16} className="mr-2" />
-                Оплата
               </TabsTrigger>
               <TabsTrigger value="requests">
                 <Icon name="ClipboardList" size={16} className="mr-2" />
@@ -554,50 +550,6 @@ export default function Index() {
                   <Button className="w-full bg-gradient-to-r from-primary to-secondary">
                     <Icon name="Send" size={16} className="mr-2" />
                     Отправить показания
-                  </Button>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="payment" className="mt-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Оплата жилищно-коммунальных услуг</CardTitle>
-                  <CardDescription>Быстрая и безопасная оплата онлайн</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="p-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg border">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-muted-foreground">Текущий период:</span>
-                      <Badge>Ноябрь 2025</Badge>
-                    </div>
-                    <Separator className="my-3" />
-                    <div className="flex justify-between items-center">
-                      <span className="font-semibold">К оплате:</span>
-                      <span className="text-2xl font-bold text-primary">4 850 ₽</span>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3 border rounded-lg">
-                      <p className="text-xs text-muted-foreground">Содержание</p>
-                      <p className="font-semibold">2 100 ₽</p>
-                    </div>
-                    <div className="p-3 border rounded-lg">
-                      <p className="text-xs text-muted-foreground">Вода</p>
-                      <p className="font-semibold">1 450 ₽</p>
-                    </div>
-                    <div className="p-3 border rounded-lg">
-                      <p className="text-xs text-muted-foreground">Электричество</p>
-                      <p className="font-semibold">980 ₽</p>
-                    </div>
-                    <div className="p-3 border rounded-lg">
-                      <p className="text-xs text-muted-foreground">Отопление</p>
-                      <p className="font-semibold">320 ₽</p>
-                    </div>
-                  </div>
-                  <Button className="w-full bg-gradient-to-r from-primary to-secondary">
-                    <Icon name="CreditCard" size={16} className="mr-2" />
-                    Оплатить 4 850 ₽
                   </Button>
                 </CardContent>
               </Card>
@@ -838,7 +790,6 @@ export default function Index() {
               <h4 className="font-bold mb-4">О компании</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">О нас</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Команда</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Документы</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Лицензии</a></li>
               </ul>
@@ -857,7 +808,6 @@ export default function Index() {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">Личный кабинет</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Передать показания</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Оплатить услуги</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Подать заявку</a></li>
               </ul>
             </div>
