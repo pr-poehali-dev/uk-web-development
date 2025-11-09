@@ -299,23 +299,194 @@ export default function Index() {
       </section>
 
       <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-3">Наши услуги</h3>
             <p className="text-muted-foreground">Комплексное обслуживание жилых комплексов</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {services.map((service, idx) => (
-              <Card key={idx} className="hover:shadow-lg transition-shadow duration-300 animate-scale-in border-2 hover:border-primary/50">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center mb-3">
-                    <Icon name={service.icon as any} className="text-primary" size={24} />
+
+          <div className="space-y-8">
+            <Card className="overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/d01bf307-6771-4ae0-9cce-7a6e51e08c1a/files/f3e0ac45-71d6-44fc-ab7d-9fdf9fad3f5c.jpg" 
+                    alt="Управление недвижимостью" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
+                      <Icon name="Building2" className="text-primary" size={24} />
+                    </div>
+                    <h4 className="text-2xl font-bold">Управление</h4>
                   </div>
-                  <CardTitle className="text-lg">{service.title}</CardTitle>
-                  <CardDescription>{service.description}</CardDescription>
+                  <div className="space-y-4 text-muted-foreground">
+                    <div>
+                      <h5 className="font-semibold text-foreground mb-2">Администрирование:</h5>
+                      <p className="text-sm">Организация и контроль всех рабочих процессов, происходящих в многоквартирном доме, урегулирование взаимоотношений с собственниками.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-foreground mb-2">Финансовое обслуживание:</h5>
+                      <p className="text-sm">Финансовое планирование, бухгалтерский учет, учет расчетов с собственниками и обслуживающими организациями.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-foreground mb-2">Юридическое сопровождение:</h5>
+                      <p className="text-sm">Полное юридическое сопровождение договорной деятельности.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div className="p-8 order-2 md:order-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
+                      <Icon name="Wrench" className="text-primary" size={24} />
+                    </div>
+                    <h4 className="text-2xl font-bold">Техническое обслуживание</h4>
+                  </div>
+                  <div className="space-y-3 text-muted-foreground text-sm">
+                    <div className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <p>Техническое обслуживание инженерных систем здания</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <p>Технический надзор за состоянием общего имущества дома путем проведения плановых общих и частичных осмотров</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <p>Выполнение мероприятий по подготовке к сезонной эксплуатации общего имущества дома</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <p>Текущий ремонт общего имущества дома, предупреждение преждевременного износа конструкций и инженерных систем</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <p>Незамедлительная организация устранения аварий и неисправностей общего имущества дома</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <p>Выполнение различных работ по заявкам жителей</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative h-64 md:h-auto order-1 md:order-2">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/d01bf307-6771-4ae0-9cce-7a6e51e08c1a/files/1d8ada01-d620-47e0-b8f4-b30045bb0f43.jpg" 
+                    alt="Техническое обслуживание" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                <div className="relative h-64 md:h-auto">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/d01bf307-6771-4ae0-9cce-7a6e51e08c1a/files/3f4a65bc-c23a-469c-b070-5dc00d22166a.jpg" 
+                    alt="Санитарное содержание" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
+                      <Icon name="Sparkles" className="text-primary" size={24} />
+                    </div>
+                    <h4 className="text-2xl font-bold">Санитарное содержание и благоустройство</h4>
+                  </div>
+                  <div className="space-y-4 text-muted-foreground">
+                    <div>
+                      <h5 className="font-semibold text-foreground mb-2">Санитарное содержание:</h5>
+                      <ul className="text-sm space-y-2">
+                        <li className="flex items-start gap-2">
+                          <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                          <span>Поддержание в надлежащем санитарном состоянии дома и прилегающего земельного участка</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                          <span>Сбор и вывоз мусора</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-foreground mb-2">Благоустройство:</h5>
+                      <ul className="text-sm space-y-2">
+                        <li className="flex items-start gap-2">
+                          <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                          <span>Уход за зелеными насаждениями</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                          <span>Обслуживание предметов интерьера на территории и в местах общего пользования</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                          <span>Разработка предложений и проектов по благоустройству дома и придомовой территории</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
+                      <Icon name="Shield" className="text-primary" size={24} />
+                    </div>
+                    <CardTitle className="text-xl">Обеспечение безопасности</CardTitle>
+                  </div>
                 </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <span>Круглосуточная охрана жилого комплекса, паркинга и прилегающей внутридворовой территории</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <span>Организация службы видеонаблюдения и контроля</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Check" className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <span>Взаимодействие с органами полиции и пожарной инспекции</span>
+                    </li>
+                  </ul>
+                </CardContent>
               </Card>
-            ))}
+
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-destructive/10 to-destructive/20 rounded-lg flex items-center justify-center">
+                      <Icon name="AlertTriangle" className="text-destructive" size={24} />
+                    </div>
+                    <CardTitle className="text-xl">Аварийная диспетчерская служба</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Круглосуточное дежурство диспетчера для постоянного контроля за состоянием инженерных систем дома, 
+                    вызова аварийных служб и обращений жителей при аварийных ситуациях.
+                  </p>
+                  <Button className="w-full bg-destructive hover:bg-destructive/90">
+                    <Icon name="Phone" size={16} className="mr-2" />
+                    Связаться со службой
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
