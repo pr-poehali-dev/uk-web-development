@@ -64,11 +64,56 @@ export default function Index() {
               </div>
             </div>
             <nav className="hidden md:flex gap-6">
-              <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">О компании</a>
-              <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">Услуги</a>
-              <a href="#houses" className="text-sm font-medium hover:text-primary transition-colors">Дома</a>
-              <a href="#news" className="text-sm font-medium hover:text-primary transition-colors">Новости</a>
-              <a href="#contacts" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
+              <a 
+                href="#about" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              >
+                О компании
+              </a>
+              <a 
+                href="#services" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              >
+                Услуги
+              </a>
+              <a 
+                href="#houses" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('houses')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              >
+                Дома
+              </a>
+              <a 
+                href="#news" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('news')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              >
+                Новости
+              </a>
+              <a 
+                href="#contacts" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-sm font-medium hover:text-primary transition-colors cursor-pointer"
+              >
+                Контакты
+              </a>
             </nav>
             <Button className="bg-gradient-to-r from-primary to-secondary">
               <Icon name="LogIn" size={16} className="mr-2" />
