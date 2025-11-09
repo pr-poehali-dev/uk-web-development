@@ -64,6 +64,7 @@ export default function Index() {
               </div>
             </div>
             <nav className="hidden md:flex gap-6">
+              <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">О компании</a>
               <a href="#services" className="text-sm font-medium hover:text-primary transition-colors">Услуги</a>
               <a href="#houses" className="text-sm font-medium hover:text-primary transition-colors">Дома</a>
               <a href="#news" className="text-sm font-medium hover:text-primary transition-colors">Новости</a>
@@ -110,8 +111,199 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-white">
+      <section id="about" className="py-16 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-3">О компании</h3>
+            <p className="text-muted-foreground">Профессионалы в сфере управления недвижимостью</p>
+          </div>
+
+          <div className="space-y-8">
+            <Card className="border-2">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
+                    <Icon name="Info" className="text-primary" size={20} />
+                  </div>
+                  История компании
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-muted-foreground leading-relaxed">
+                <p>
+                  Группа управляющих компаний «Наш дом» создана профессионалами в сфере эксплуатации жилой недвижимости в 2007 году. 
+                  Мы занимаемся обслуживанием и управлением домами, регулярно модернизируем сервис ЖКХ. 
+                  Находим и внедряем лучшие из возможных решений в сфере управления жилой недвижимостью.
+                </p>
+                <p className="mt-3">
+                  Это, прежде всего, команда единомышленников, объединившая молодых специалистов и опытных квалифицированных сотрудников, 
+                  работающих в сфере управления жилищно-коммунальным хозяйством не один год.
+                </p>
+              </CardContent>
+            </Card>
+
+            <div>
+              <h4 className="text-xl font-bold mb-6">Основные принципы работы</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <Card className="border-l-4 border-l-primary">
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="TrendingUp" className="text-primary" size={18} />
+                      Прогрессивные методы
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Комплексный подход к управлению для получения максимального результата
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-primary">
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="Heart" className="text-primary" size={18} />
+                      Забота о комфорте
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Системный и последовательный подход к решению текущих проблем жителей
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-primary">
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="DollarSign" className="text-primary" size={18} />
+                      Демократичные цены
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Справедливая ценовая политика и прозрачность расчетов
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-primary">
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="Users" className="text-primary" size={18} />
+                      Квалифицированные специалисты
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Использование труда исключительно высококвалифицированных специалистов
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-primary">
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="Target" className="text-primary" size={18} />
+                      Качество услуг
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Улучшение и совершенствование качества оказываемых услуг
+                  </CardContent>
+                </Card>
+
+                <Card className="border-l-4 border-l-primary">
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="TrendingDown" className="text-primary" size={18} />
+                      Снижение затрат
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Снижение стоимости обслуживания жилищного фонда и потребляемых услуг
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold mb-6">Ключевые задачи компании</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="Shield" className="text-primary" size={18} />
+                      Сохранность жилищного фонда
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Организация работ, направленных на сохранность жилищного фонда, улучшение качественных характеристик предоставления жилищно-коммунальных услуг населению
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="Home" className="text-primary" size={18} />
+                      Комфортные условия
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Обеспечение комфортных условий проживания в жилищном фонде граждан в соответствии с государственными стандартами качества
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="Wrench" className="text-primary" size={18} />
+                      Техническое обслуживание
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Обеспечение санитарного содержания, технического обслуживания и ремонта жилищного фонда в соответствии с действующими нормативами
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="FileText" className="text-primary" size={18} />
+                      Прозрачность расчетов
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Обеспечение системы предоставления жилищных и коммунальных услуг, их оплаты в соответствии с реально достигнутым качеством и количеством
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="MessageSquare" className="text-primary" size={18} />
+                      Работа с населением
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Проведение разъяснительной работы с населением, направленной на повышение сохранности жилищного фонда и снижение энергопотребления
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-base flex items-center gap-2">
+                      <Icon name="CircleDollarSign" className="text-primary" size={18} />
+                      Финансовая прозрачность
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    Организация сбора платежей от населения, расчета с поставщиками коммунальных услуг и подрядными организациями за выполненные работы
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-3">Наши услуги</h3>
+            <p className="text-muted-foreground">Комплексное обслуживание жилых комплексов</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {services.map((service, idx) => (
               <Card key={idx} className="hover:shadow-lg transition-shadow duration-300 animate-scale-in border-2 hover:border-primary/50">
