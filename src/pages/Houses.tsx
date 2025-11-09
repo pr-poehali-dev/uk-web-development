@@ -8,21 +8,58 @@ export default function Houses() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const allHouses = [
-    { id: 1, address: 'Кондратьевский пр., д. 66, корп. 1', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37', district: 'Калининский' },
-    { id: 2, address: 'Кондратьевский пр., д. 62, корп. 2', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37', district: 'Калининский' },
-    { id: 3, address: 'ул. Васенко, д. 12, литера А (ЖК "Золотое сечение")', manager: 'Екатерина Васильевна Павлова', phone: '+7 921 334-43-74', district: 'Красногвардейский' },
-    { id: 4, address: 'Фермское ш., д. 22, корп. 3', manager: 'Павел Львович Моисеев', phone: '8 (921) 954-31-94', district: 'Приморский' },
-    { id: 5, address: 'Петровский пр., д. 5, стр. 1 (ЖК "Остров")', manager: 'Евдокимов Сергей Борисович', phone: '8 (921) 632-48-39', district: 'Петроградский' },
-    { id: 6, address: 'ул. Большая Зеленина, д. 24, стр. 1 (БЦ "Грани")', manager: 'Галина Алексеевна Рожкова', phone: '8 (993) 641-35-95', district: 'Петроградский' },
-    { id: 7, address: 'Приморское ш., д. 352, стр. 1 (ЖК "Пляж")', manager: 'Павлюк Александр Васильевич', phone: '8 (931) 251-10-40', district: 'Приморский' },
-    { id: 8, address: 'Кондратьевский пр., д. 62, корп. 7 (ЖК "Панорама")', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37', district: 'Калининский' },
-    { id: 9, address: 'Невский пр., д. 85', manager: 'Иванова Мария Петровна', phone: '8 (921) 123-45-67', district: 'Центральный' },
-    { id: 10, address: 'ул. Ленина, д. 45', manager: 'Сидоров Алексей Иванович', phone: '8 (921) 234-56-78', district: 'Выборгский' },
-    { id: 11, address: 'пр. Энгельса, д. 154, корп. 1', manager: 'Петрова Светлана Николаевна', phone: '8 (921) 345-67-89', district: 'Выборгский' },
-    { id: 12, address: 'Московский пр., д. 212', manager: 'Кузнецов Дмитрий Сергеевич', phone: '8 (921) 456-78-90', district: 'Московский' },
-    { id: 13, address: 'ул. Савушкина, д. 126', manager: 'Смирнова Ольга Владимировна', phone: '8 (921) 567-89-01', district: 'Приморский' },
-    { id: 14, address: 'ул. Типанова, д. 21', manager: 'Волков Андрей Михайлович', phone: '8 (921) 678-90-12', district: 'Московский' },
-    { id: 15, address: 'Комендантский пр., д. 42, корп. 2', manager: 'Николаева Анна Викторовна', phone: '8 (921) 789-01-23', district: 'Приморский' },
+    { id: 1, address: 'ул. Беловой, д. 1г, стр. 1 (Коттеджный поселок "Сад времени")', manager: 'Александр Васильевич Павлюк', phone: '+7 (931) 251-10-40', district: 'Санкт-Петербург' },
+    { id: 2, address: 'ул. Васенко, д. 12, литера Б (Паркинг)', manager: 'Алексей Сергеевич Стекольников', phone: '8 (953) 365-65-05', district: 'Красногвардейский' },
+    { id: 3, address: 'Фермское ш., д. 20, корп. 3 (Паркинг)', manager: 'Алексей Сергеевич Стекольников', phone: '8 (953) 365-65-05', district: 'Приморский' },
+    { id: 4, address: 'Фермское ш., д. 22, корп. 2 (Паркинг)', manager: 'Алексей Сергеевич Стекольников', phone: '8 (953) 365-65-05', district: 'Приморский' },
+    { id: 5, address: 'ул. Зеленогорская, д. 12, литера В (Паркинг)', manager: 'Алексей Сергеевич Стекольников', phone: '8 (953) 365-65-05', district: 'Санкт-Петербург' },
+    { id: 6, address: 'Кондратьевский просп., д. 66, корп. 1', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37', district: 'Калининский' },
+    { id: 7, address: 'Кондратьевский просп., д. 62, корп. 2', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37', district: 'Калининский' },
+    { id: 8, address: 'ул. Васенко, д. 12, литера А (ЖК "Золотое сечение")', manager: 'Екатерина Васильевна Павлова', phone: '+7 (921) 334-43-74', district: 'Красногвардейский' },
+    { id: 9, address: 'Кондратьевский просп., д. 62, корп. 1', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37', district: 'Калининский' },
+    { id: 10, address: 'Фермское ш., д. 22, корп. 3', manager: 'Павел Львович Моисеев', phone: '8 (921) 954-31-94', district: 'Приморский' },
+    { id: 11, address: 'Петровский просп., д. 5, стр. 1 (ЖК "Остров")', manager: 'Евдокимов Сергей Борисович', phone: '8 (921) 632-48-39', district: 'Петроградский' },
+    { id: 12, address: 'ул. Большая Зеленина, д. 24, стр. 1 (БЦ "Грани")', manager: 'Галина Алексеевна Рожкова', phone: '8 (993) 641-35-95', district: 'Петроградский' },
+    { id: 13, address: 'Приморское ш., д. 352, стр. 1 (ЖК "Пляж")', manager: 'Павлюк Александр Васильевич', phone: '8 (931) 251-10-40', district: 'Приморский' },
+    { id: 14, address: 'Кондратьевский просп., д. 62, корп. 7 (ЖК "Панорама")', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37', district: 'Калининский' },
+    { id: 15, address: 'просп. Металлистов, д. 116, корп. 1, литера А (ЖК "Золотое сечение")', manager: 'Екатерина Васильевна Павлова', phone: '8 (921) 334-43-74', district: 'Красногвардейский' },
+    { id: 16, address: 'ул. Академика Константинова, д. 1, корп. 1, стр. 1 (ЖК "Наука")', manager: 'Елена Викторовна Суконкина', phone: '8 (921) 366-50-88', district: 'Калининский' },
+    { id: 17, address: 'ул. Малая Бухарестская, д. 12, стр. 1 (ЖК "Новое Купчино")', manager: 'Наталья Геннадьевна Мурашова', phone: '8 (931) 388-65-80', district: 'Фрунзенский' },
+    { id: 18, address: 'ул. Одоевского, д. 21, корп. 1, стр. 1 (ЖК «Адмирал»)', manager: 'Галина Алексеевна Рожкова', phone: '8 (993) 641-35-95', district: 'Приморский' },
+    { id: 19, address: 'ул. Ремесленная, д. 21, стр. 1 (Апарт-отель «Аватар»)', manager: 'Галина Алексеевна Рожкова', phone: '8 (993) 641-35-95', district: 'Центральный' },
+    { id: 20, address: 'Бульвар Белых ночей, д. 3', manager: 'Вера Ивановна Бакшеева', phone: '8 (921) 337-43-41', district: 'Приморский' },
+    { id: 21, address: 'Красносельское ш., д. 20 (Паркинг)', manager: 'Алексей Сергеевич Стекольников', phone: '8 (953) 365-65-05', district: 'Красносельский' },
+    { id: 22, address: 'Красносельское ш., д. 8 (Паркинг)', manager: 'Алексей Сергеевич Стекольников', phone: '8 (953) 365-65-05', district: 'Красносельский' },
+    { id: 23, address: 'Красносельское ш., д. 4 (Паркинг)', manager: 'Алексей Сергеевич Стекольников', phone: '8 (953) 365-65-05', district: 'Красносельский' },
+    { id: 24, address: 'ул. Адмиралтейская, д. 11', manager: 'Вера Ивановна Бакшеева', phone: '8 (921) 337-43-41', district: 'Адмиралтейский' },
+    { id: 25, address: 'Питерский просп., д. 7 (ЖК NewПитер)', manager: 'Ольга Вадимовна Васильева', phone: '8 (921) 943-72-93', district: 'Красносельский' },
+    { id: 26, address: 'Питерский просп., д. 5 (ЖК NewПитер)', manager: 'Ольга Вадимовна Васильева', phone: '8 (921) 943-72-93', district: 'Красносельский' },
+    { id: 27, address: 'Невская ул., д. 5/7 (ЖК NewПитер)', manager: 'Вера Ивановна Бакшеева', phone: '8 (921) 337-43-41', district: 'Красносельский' },
+    { id: 28, address: 'Невская ул., д. 4 (ЖК NewПитер)', manager: 'Ольга Вадимовна Васильева', phone: '8 (921) 943-72-93', district: 'Красносельский' },
+    { id: 29, address: 'Невская ул., д. 3 (ЖК NewПитер)', manager: 'Вера Ивановна Бакшеева', phone: '8 (921) 337-43-41', district: 'Красносельский' },
+    { id: 30, address: 'Адмиралтейская ул., д. 3 (ЖК NewПитер)', manager: 'Ольга Вадимовна Васильева', phone: '8 (921) 943-73-93', district: 'Красносельский' },
+    { id: 31, address: 'Невская ул., д. 10/5 (ЖК NewПитер)', manager: 'Ольга Вадимовна Васильева', phone: '8 (921) 943-73-93', district: 'Красносельский' },
+    { id: 32, address: 'Невская ул., д. 1 (ЖК NewПитер)', manager: 'Вера Ивановна Бакшеева', phone: '8 (921) 337-43-41', district: 'Красносельский' },
+    { id: 33, address: 'Невская ул., д. 6 (ЖК NewПитер)', manager: 'Ольга Вадимовна Васильева', phone: '8 (921) 943-73-93', district: 'Красносельский' },
+    { id: 34, address: 'Адмиралтейская ул., д. 9 (ЖК NewПитер)', manager: 'Вера Ивановна Бакшеева', phone: '8 (921) 337-43-41', district: 'Красносельский' },
+    { id: 35, address: 'Адмиралтейская ул., д. 1 (ЖК NewПитер)', manager: 'Ольга Вадимовна Васильева', phone: '8 (921) 943-73-93', district: 'Красносельский' },
+    { id: 36, address: 'Питерский просп., д. 1 (ЖК NewПитер)', manager: 'Ольга Вадимовна Васильева', phone: '8 (921) 943-73-93', district: 'Красносельский' },
+    { id: 37, address: 'Красносельское ш., д. 16 (ЖК NewПитер)', manager: 'Вера Ивановна Бакшеева', phone: '8 (921) 337-43-41', district: 'Красносельский' },
+    { id: 38, address: 'Красносельское ш., д. 6 (ЖК NewПитер)', manager: 'Ольга Вадимовна Васильева', phone: '8 (921) 943-73-93', district: 'Красносельский' },
+    { id: 39, address: 'г. Бугры, Петровский бульвар, д. 28', manager: 'Галина Викторовна Топал', phone: '', district: 'Всеволожский (ЛО)' },
+    { id: 40, address: 'Мурино, Воронцовский бульвар, д. 23/11', manager: 'Виктория Валерьевна Саврандейкина', phone: '8 (921) 954-33-94', district: 'Всеволожский (ЛО)' },
+    { id: 41, address: 'Кудрово, ул. Областная, д. 5, корп. 1, 2, 3, 5, 6', manager: 'Анна Николаевна Кочевова', phone: '+7 (921) 385-79-31', district: 'Всеволожский (ЛО)' },
+    { id: 42, address: 'Кудрово, ул. Областная, д. 9, корп. 2', manager: 'Станислав Александрович Мельников', phone: '8 (931) 586-19-77', district: 'Всеволожский (ЛО)' },
+    { id: 43, address: 'Кудрово, Каштановая аллея, д. 2', manager: 'Лена Николаевна Истомина', phone: '+7 (921) 357-34-09', district: 'Всеволожский (ЛО)' },
+    { id: 44, address: 'Кудрово, Каштановая аллея, д. 3', manager: 'Лена Николаевна Истомина', phone: '+7 (921) 357-34-09', district: 'Всеволожский (ЛО)' },
+    { id: 45, address: 'Кудрово, просп. Строителей, д. 2', manager: 'Анастасия Олеговна Сажнева', phone: '8 (999) 024-61-74', district: 'Всеволожский (ЛО)' },
+    { id: 46, address: 'Кудрово, просп. Строителей, д. 6', manager: 'Анастасия Олеговна Сажнева', phone: '8 (999) 024-61-74', district: 'Всеволожский (ЛО)' },
+    { id: 47, address: 'Кудрово, ул. Областная, д. 3', manager: 'Анна Николаевна Кочевова', phone: '8 (921) 385-79-31', district: 'Всеволожский (ЛО)' },
+    { id: 48, address: 'Кудрово, ул. Областная, д. 9, корп. 1', manager: 'Станислав Александрович Мельников', phone: '8 (931) 586-19-77', district: 'Всеволожский (ЛО)' },
+    { id: 49, address: 'Кудрово, просп. Строителей, д. 4', manager: 'Анастасия Олеговна Сажнева', phone: '8 (999) 024-61-74', district: 'Всеволожский (ЛО)' },
+    { id: 50, address: 'Кудрово, ул. Ленинградская, д. 9/8', manager: 'Анастасия Олеговна Сажнева', phone: '8 (999) 024-61-74', district: 'Всеволожский (ЛО)' },
+    { id: 51, address: 'Кудрово, ул. Областная, д. 7', manager: 'Станислав Александрович Мельников', phone: '8 (931) 586-19-77', district: 'Всеволожский (ЛО)' },
+    { id: 52, address: 'Московская застава (ЖК ID Московский)', manager: '', phone: '', district: 'Московский' },
   ];
 
   const filteredHouses = allHouses.filter(house => 
@@ -71,7 +108,7 @@ export default function Houses() {
               <h2 className="text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Все дома в управлении
               </h2>
-              <p className="text-muted-foreground mb-8">50+ многоквартирных домов и 13 паркингов по всему Санкт-Петербургу</p>
+              <p className="text-muted-foreground mb-8">52 объекта недвижимости: многоквартирные дома и паркинги в Санкт-Петербурге и Ленинградской области</p>
               
               <div className="max-w-md mx-auto relative">
                 <Icon name="Search" className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
@@ -91,8 +128,8 @@ export default function Houses() {
                     <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
                       <Icon name="MapPin" className="text-primary" size={18} />
                     </div>
-                    <h3 className="text-2xl font-bold">{district} район</h3>
-                    <span className="text-sm text-muted-foreground">({houses.length} {houses.length === 1 ? 'дом' : 'дома'})</span>
+                    <h3 className="text-2xl font-bold">{district}</h3>
+                    <span className="text-sm text-muted-foreground">({houses.length} {houses.length === 1 ? 'объект' : houses.length < 5 ? 'объекта' : 'объектов'})</span>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -114,19 +151,23 @@ export default function Houses() {
                         </CardHeader>
                         <CardContent className="pt-0">
                           <div className="space-y-2">
-                            <div className="flex items-start gap-2 text-sm text-muted-foreground">
-                              <Icon name="User" size={14} className="mt-0.5 flex-shrink-0" />
-                              <span className="leading-tight">{house.manager}</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <Icon name="Phone" size={14} className="text-primary" />
-                              <a 
-                                href={`tel:${house.phone}`} 
-                                className="text-sm text-primary font-medium hover:underline"
-                              >
-                                {house.phone}
-                              </a>
-                            </div>
+                            {house.manager && (
+                              <div className="flex items-start gap-2 text-sm text-muted-foreground">
+                                <Icon name="User" size={14} className="mt-0.5 flex-shrink-0" />
+                                <span className="leading-tight">{house.manager}</span>
+                              </div>
+                            )}
+                            {house.phone && (
+                              <div className="flex items-center gap-2">
+                                <Icon name="Phone" size={14} className="text-primary" />
+                                <a 
+                                  href={`tel:${house.phone}`} 
+                                  className="text-sm text-primary font-medium hover:underline"
+                                >
+                                  {house.phone}
+                                </a>
+                              </div>
+                            )}
                           </div>
                         </CardContent>
                       </Card>
