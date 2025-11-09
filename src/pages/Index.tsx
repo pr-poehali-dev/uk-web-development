@@ -14,10 +14,14 @@ export default function Index() {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const houses = [
-    { id: 1, address: 'ул. Ленина, 45', year: 1985, floors: 9, apartments: 72, lat: 59.93, lng: 30.36 },
-    { id: 2, address: 'Невский пр., 120', year: 1978, floors: 12, apartments: 144, lat: 59.93, lng: 30.37 },
-    { id: 3, address: 'ул. Маршала Жукова, 33', year: 1992, floors: 16, apartments: 256, lat: 59.94, lng: 30.35 },
-    { id: 4, address: 'пр. Просвещения, 88', year: 2001, floors: 10, apartments: 120, lat: 59.95, lng: 30.38 },
+    { id: 1, address: 'Кондратьевский пр., д. 66, корп. 1', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37' },
+    { id: 2, address: 'Кондратьевский пр., д. 62, корп. 2', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37' },
+    { id: 3, address: 'ул. Васенко, д. 12, литера А (ЖК "Золотое сечение")', manager: 'Екатерина Васильевна Павлова', phone: '+7 921 334-43-74' },
+    { id: 4, address: 'Фермское ш., д. 22, корп. 3', manager: 'Павел Львович Моисеев', phone: '8 (921) 954-31-94' },
+    { id: 5, address: 'Петровский пр., д. 5, стр. 1 (ЖК "Остров")', manager: 'Евдокимов Сергей Борисович', phone: '8 (921) 632-48-39' },
+    { id: 6, address: 'ул. Большая Зеленина, д. 24, стр. 1 (БЦ "Грани")', manager: 'Галина Алексеевна Рожкова', phone: '8 (993) 641-35-95' },
+    { id: 7, address: 'Приморское ш., д. 352, стр. 1 (ЖК "Пляж")', manager: 'Павлюк Александр Васильевич', phone: '8 (931) 251-10-40' },
+    { id: 8, address: 'Кондратьевский пр., д. 62, корп. 7 (ЖК "Панорама")', manager: 'Наталья Валерьевна Машкарина', phone: '8 (931) 240-22-37' },
   ];
 
   const news = [
@@ -28,10 +32,17 @@ export default function Index() {
   ];
 
   const services = [
-    { icon: 'Droplet', title: 'Водоснабжение', description: 'Круглосуточное обеспечение' },
-    { icon: 'Zap', title: 'Электричество', description: 'Обслуживание сетей' },
-    { icon: 'Wrench', title: 'Ремонт', description: 'Аварийная служба 24/7' },
-    { icon: 'Trash2', title: 'Вывоз ТКО', description: 'Ежедневный вывоз мусора' },
+    { icon: 'Building2', title: 'Управление', description: 'Администрирование и финансовое обслуживание' },
+    { icon: 'Wrench', title: 'Техническое обслуживание', description: 'Инженерные системы и текущий ремонт' },
+    { icon: 'Sparkles', title: 'Санитарное содержание', description: 'Уборка МОП и придомовой территории' },
+    { icon: 'Shield', title: 'Безопасность', description: 'Охрана и видеонаблюдение 24/7' },
+  ];
+
+  const stats = [
+    { value: '1 млн м²', label: 'Обслуживаемой площади' },
+    { value: '50+', label: 'Многоквартирных домов' },
+    { value: '13', label: 'Паркингов' },
+    { value: '18 лет', label: 'Оказываем услуги' },
   ];
 
   const filteredNews = activeFilter === 'all' 
@@ -48,8 +59,8 @@ export default function Index() {
                 <Icon name="Building2" className="text-white" size={24} />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">ГК "Северные дома"</h1>
-                <p className="text-xs text-muted-foreground">Управление недвижимостью в СПб</p>
+                <h1 className="text-xl font-bold text-gray-900">ГК "Наш дом"</h1>
+                <p className="text-xs text-muted-foreground">Управление недвижимостью с 2007 года</p>
               </div>
             </div>
             <nav className="hidden md:flex gap-6">
@@ -70,14 +81,21 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10"></div>
         <div className="container mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
-            <Badge className="mb-4 bg-secondary/10 text-secondary border-secondary/20">Современное управление</Badge>
+            <Badge className="mb-4 bg-secondary/10 text-secondary border-secondary/20">С 2007 года</Badge>
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Управляющая компания нового поколения
+              Группа управляющих компаний «Наш дом»
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Прозрачность, технологичность и забота о каждом жильце. 
-              Все сервисы доступны онлайн 24/7
+              Высокий уровень клиентского сервиса, чтобы быть полезными для наших жителей в любое время и по любому вопросу
             </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto">
+              {stats.map((stat, idx) => (
+                <div key={idx} className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border">
+                  <p className="text-2xl font-bold text-primary mb-1">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-primary to-secondary">
                 <Icon name="User" size={18} className="mr-2" />
@@ -278,59 +296,38 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-3">Дома в управлении</h3>
-            <p className="text-muted-foreground">84 дома по всему Санкт-Петербургу</p>
+            <p className="text-muted-foreground">50+ многоквартирных домов и 13 паркингов</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {houses.map((house) => (
                 <Card 
                   key={house.id} 
-                  className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
-                    selectedHouse === house.id ? 'border-primary border-2 shadow-lg' : ''
-                  }`}
-                  onClick={() => setSelectedHouse(house.id)}
+                  className="hover:shadow-lg transition-all duration-300"
                 >
                   <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <CardTitle className="text-lg">{house.address}</CardTitle>
-                        <CardDescription>Построен в {house.year} году</CardDescription>
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Icon name="Building2" className="text-primary" size={20} />
                       </div>
-                      <Icon name="MapPin" className="text-primary" size={20} />
+                      <div className="flex-1 min-w-0">
+                        <CardTitle className="text-base leading-snug mb-2">{house.address}</CardTitle>
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <Icon name="User" size={12} />
+                            <span className="truncate">{house.manager}</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-xs text-primary font-medium">
+                            <Icon name="Phone" size={12} />
+                            <a href={`tel:${house.phone}`} className="hover:underline">{house.phone}</a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-3 gap-4 text-center">
-                      <div>
-                        <p className="text-2xl font-bold text-primary">{house.floors}</p>
-                        <p className="text-xs text-muted-foreground">этажей</p>
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold text-primary">{house.apartments}</p>
-                        <p className="text-xs text-muted-foreground">квартир</p>
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold text-primary">{house.year}</p>
-                        <p className="text-xs text-muted-foreground">год</p>
-                      </div>
-                    </div>
-                  </CardContent>
                 </Card>
               ))}
-            </div>
-
-            <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-8 flex items-center justify-center border-2 border-dashed">
-              <div className="text-center">
-                <Icon name="Map" size={64} className="text-primary/30 mx-auto mb-4" />
-                <p className="text-lg font-semibold text-muted-foreground">Интерактивная карта</p>
-                <p className="text-sm text-muted-foreground">Выберите дом из списка слева</p>
-                {selectedHouse && (
-                  <Badge className="mt-4 bg-primary">
-                    Дом выбран: {houses.find(h => h.id === selectedHouse)?.address}
-                  </Badge>
-                )}
-              </div>
             </div>
           </div>
         </div>
@@ -408,7 +405,7 @@ export default function Index() {
                     <Icon name="Phone" className="text-primary" size={24} />
                   </div>
                   <CardTitle className="text-lg">Телефон</CardTitle>
-                  <CardDescription>+7 (812) 123-45-67</CardDescription>
+                  <CardDescription><a href="tel:+78126408826" className="hover:text-primary transition-colors">+7 (812) 640-88-26</a></CardDescription>
                 </CardHeader>
               </Card>
 
@@ -418,7 +415,7 @@ export default function Index() {
                     <Icon name="AlertTriangle" className="text-destructive" size={24} />
                   </div>
                   <CardTitle className="text-lg text-destructive">Аварийная служба</CardTitle>
-                  <CardDescription className="text-destructive font-bold text-xl">112</CardDescription>
+                  <CardDescription className="text-destructive font-bold text-xl">Круглосуточно</CardDescription>
                 </CardHeader>
               </Card>
 
@@ -428,7 +425,7 @@ export default function Index() {
                     <Icon name="Mail" className="text-primary" size={24} />
                   </div>
                   <CardTitle className="text-lg">Email</CardTitle>
-                  <CardDescription>info@uk-spb.ru</CardDescription>
+                  <CardDescription><a href="mailto:uk.nashdom@inbox.ru" className="hover:text-primary transition-colors">uk.nashdom@inbox.ru</a></CardDescription>
                 </CardHeader>
               </Card>
             </div>
@@ -436,20 +433,34 @@ export default function Index() {
             <Card>
               <CardHeader>
                 <CardTitle>Офис компании</CardTitle>
-                <CardDescription>Санкт-Петербург, Невский проспект, 100</CardDescription>
+                <CardDescription>Группа управляющих компаний «Наш дом»</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center border-2 border-dashed">
-                  <div className="text-center">
-                    <Icon name="MapPin" size={48} className="text-primary/30 mx-auto mb-3" />
-                    <p className="text-sm text-muted-foreground">Карта Яндекс</p>
+                <div className="p-4 bg-muted/50 rounded-lg space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Icon name="Clock" className="text-primary" size={20} />
+                    <div>
+                      <p className="text-sm font-semibold">График работы:</p>
+                      <p className="text-sm text-muted-foreground">Пн-Чт: 09:00 – 18:00</p>
+                      <p className="text-sm text-muted-foreground">Пт: 09:00 – 17:00</p>
+                      <p className="text-sm text-muted-foreground">Обед: 13:00-14:00</p>
+                    </div>
                   </div>
-                </div>
-                <div className="mt-4 p-4 bg-muted/50 rounded-lg">
-                  <p className="text-sm font-semibold mb-2">График приёма граждан:</p>
-                  <p className="text-sm text-muted-foreground">Пн-Пт: 9:00 - 18:00</p>
-                  <p className="text-sm text-muted-foreground">Сб: 10:00 - 14:00</p>
-                  <p className="text-sm text-muted-foreground">Вс: выходной</p>
+                  <Separator />
+                  <div className="flex items-center gap-3">
+                    <Icon name="Phone" className="text-primary" size={20} />
+                    <div>
+                      <p className="text-sm font-semibold">Телефон:</p>
+                      <a href="tel:+78126408826" className="text-sm text-primary hover:underline">+7 (812) 640-88-26</a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Icon name="Mail" className="text-primary" size={20} />
+                    <div>
+                      <p className="text-sm font-semibold">Email:</p>
+                      <a href="mailto:uk.nashdom@inbox.ru" className="text-sm text-primary hover:underline">uk.nashdom@inbox.ru</a>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -499,8 +510,11 @@ export default function Index() {
           </div>
           <Separator className="bg-gray-800 mb-8" />
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-            <p>© 2025 ГК "Северные дома". Все права защищены.</p>
-            <p>Санкт-Петербург</p>
+            <p>© 2007–2025 Группа управляющих компаний «Наш дом»</p>
+            <div className="flex gap-4 text-xs">
+              <a href="tel:+78126408826" className="hover:text-white transition-colors">+7 (812) 640-88-26</a>
+              <a href="mailto:uk.nashdom@inbox.ru" className="hover:text-white transition-colors">uk.nashdom@inbox.ru</a>
+            </div>
           </div>
         </div>
       </footer>
